@@ -1,4 +1,6 @@
-# critic-agent (DeAI Skill)
+# critic-agent
+
+[![Verify skill bundle](https://github.com/hey-dmitri/DeAI_Skill/actions/workflows/verify.yml/badge.svg)](https://github.com/hey-dmitri/DeAI_Skill/actions/workflows/verify.yml)
 
 A self-review protocol that catches AI tells, voice mismatches, and substance problems in written work, then revises until the text passes or three rounds run out.
 
@@ -17,7 +19,7 @@ Point it at any draft (an email, a post, outreach copy, a report) and it runs fo
 
 The list is tiered so the critic reacts proportionally instead of flagging every draft:
 
-- Tier 1 is a hard kill: words that give AI away on sight, like "delve," "tapestry," or "load-bearing." One hit flags.
+- Tier 1 is a hard kill: words that give AI away on sight, like "delve," "tapestry," or "pivotal." One hit flags.
 - Tier 2 flags in clusters: words that are fine alone but suspicious in bulk, like "crucial," "showcasing," or "quietly." Three or more in one piece flags.
 - Tier 3 is tone leakage: chatbot phrasing that slipped into the output, like "I hope this helps" or "in conclusion." One hit flags.
 
@@ -35,6 +37,16 @@ unzip critic-agent.skill -d .claude/skills/       # this project only
 
 That gives you `~/.claude/skills/critic-agent/SKILL.md`. Start Claude Code and say "run the critic" or "check this for AI tells."
 
+## Try it
+
+Point the critic at a draft and, when available, include a `voice-dna.md` file with real writing samples:
+
+```text
+Run the critic on this draft. Use voice-dna.md and revise it until it passes.
+```
+
+Without `voice-dna.md`, the skill still runs its substance, AI-tell, and formatting checks. It skips the voice-match pass and says so explicitly.
+
 ## Editing
 
 `SKILL.md` is the only file you edit. After changing it, rebuild the bundle so the two stay in step:
@@ -44,6 +56,8 @@ That gives you `~/.claude/skills/critic-agent/SKILL.md`. Start Claude Code and s
 ```
 
 Then commit both files.
+
+GitHub Actions also checks that the committed bundle still contains the current `SKILL.md`.
 
 ## License
 

@@ -1,0 +1,30 @@
+name: Verify skill bundle
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate build script
+        run: bash -n build.sh
+
+      - name: Verify committed bundle
+        run: |
+          unzip -p critic-agent.skill critic-agent/SKILL.md > /tmp/critic-agent-SKILL.md
+          cmp SKILL.md /tmp/critic-agent-SKILL.md
+
+      - name: Rebuild bundle
+        run: ./build.sh
+
+      - name: Verify rebuilt bundle
+        run: |
+          unzip -p critic-agent.skill critic-agent/SKILL.md > /tmp/critic-agent-SKILL.md
+          cmp SKILL.md /tmp/critic-agent-SKILL.md

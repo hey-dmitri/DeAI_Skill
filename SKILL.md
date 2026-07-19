@@ -160,7 +160,7 @@ Remove or rewrite immediately. These are the most recognizable AI tells.
 delve, delves, delving · tapestry (figurative) · landscape (figurative) · testament (to) ·
 pivotal · underscore (as verb) · intricate, intricacies · meticulous, meticulously · vibrant ·
 nestled · in the heart of · groundbreaking (figurative) · indelible mark · set the stage for ·
-a testament to · load-bearing (figurative)
+a testament to
 
 ### Tier 2: Flag and Evaluate
 

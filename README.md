@@ -1,8 +1,10 @@
-# critic-agent
+# DeAI Skill
 
 [![Verify skill bundle](https://github.com/hey-dmitri/DeAI_Skill/actions/workflows/verify.yml/badge.svg)](https://github.com/hey-dmitri/DeAI_Skill/actions/workflows/verify.yml)
 
 A self-review protocol that catches AI tells, voice mismatches, and substance problems in written work, then revises until the text passes or three rounds run out.
+
+The skill inside is named `critic-agent`. That is the name it installs under and the name you call it by.
 
 Point it at any draft (an email, a post, outreach copy, a report) and it runs four checks: whether the voice matches your samples, whether the substance holds up, structural AI fingerprints, and formatting tells. It flags each issue against a named rule, suggests what you'd actually write instead of just deleting, and stops after three rounds.
 
